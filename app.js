@@ -48,6 +48,7 @@ function remove(){
 document.getElementById('addTodo').addEventListener('click', add);
 
 
+
 /*
 Challenge: Figure out how to delete an item!
 ***Notes on deleting to todo items***

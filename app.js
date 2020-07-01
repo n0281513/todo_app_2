@@ -21,7 +21,6 @@ function add() {
 
     localStorage.setItem("todos", JSON.stringify (todos));
   
-    show();
 }
 
 function show(){
@@ -39,14 +38,14 @@ function show(){
 
 show();
 
+document.getElementById('addTodo').addEventListener('click', add);
+
 function remove(){
-    
+    var todo = get_todos();
 
 }
 
-
-document.getElementById('addTodo').addEventListener('click', add);
-
+document.getElementById('removeTodo').addEventListener('click', remove);
 
 
 /*

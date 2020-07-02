@@ -8,10 +8,23 @@
 
         <input id="itemToAdd" type="text">
             <button id="addTodo">Add Item</button>
-            <button id="removeTodo">Remove Item</button>
+            <button id="removeTodo" onclick="removeTodo()">Remove Item</button> 
+            <p>Remove item button added after I coundn't get the item button next to each item to delte the item</p>
 
-        
+                
     <div id="todos"></div>
+    <p>
+        <h2>Challenge: Figure out how to delete an item!</h2><br>
+        <h3>***Notes on deleting to todo items***</h3>
+        1. you need a unique id for each item <br>
+        2. you need a delete button that can be accessed individually in JS<br>
+        3. you can use the id for each item to give its button a unique id<br>
+        4. you can grab the id for the todo that is to be deletes using JS<br>
+        5. remember, you can create HTML using the string - including ids<br>
+        6. to remove an element from an array. use the fuction slice()<br>
+        7. buttons will need event listners. those are to be created at the time you dynamically creat the buttons
+        </p>
     </body>
+
     <script src="app.js"></script>
 </html>

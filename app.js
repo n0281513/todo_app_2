@@ -1,8 +1,8 @@
 function get_todos() 
 {
-    var todos = new Array();
+    let todos = new Array();
 
-    var todosString = localStorage.getItem('todos');
+    let todosString = localStorage.getItem('todos');
 
 
         if (todosString !== null) 
@@ -14,8 +14,8 @@ function get_todos()
 
 
 function add() {
-        var todos = get_todos();
-        var textBoxContent = document.getElementById('itemToAdd').value;
+        let todos = get_todos();
+        let textBoxContent = document.getElementById('itemToAdd').value;
 
     todos.push(textBoxContent);
 
@@ -24,38 +24,35 @@ function add() {
 }
 
 function show(){
-    var todos = get_todos();
-    var html = '<ul>';
+    let todos = get_todos();
+    let html = '<ul>';
 
-        for(var i = 0; i< todos.length; i++)  
+        for(let i = 0; i< todos.length; i++)  
         {
-            html += '<li>' + todos[i] + '<button>Item</button></li>';
+            html += '<li>' + todos[i] + '<button>Item</button></li>'; /* I want these buttons to remove each item*/
         }
     html += '</ul>';
 
     document.getElementById('todos').innerHTML = html;
 }
 
-show();
+show(); /* Add show here so I can see what changes are made on my page*/
 
 document.getElementById('addTodo').addEventListener('click', add);
 
-function remove(){
-    var todo = get_todos();
+function removeTodo(){
 
+    let todos = removeTodo();
+    let i = this.id;
+
+    let removeTodo = i.substring(10, i.length);
+
+    todos.splice(removeTodo, 0);/* Don't really understand splice yet*/
+
+    localStorage.setItem('todos',JSON.stringify(todos));
+/* this just keeps adding new undefined items when webpage is refreshed*/
 }
+document.getElementById('removeTodo').addEventListener('click', add);
 
-document.getElementById('removeTodo').addEventListener('click', remove);
 
 
-/*
-Challenge: Figure out how to delete an item!
-***Notes on deleting to todo items***
-1. you need a unique id for each item 
-2. you need a delete button that can be accessed individually in JS
-3. you can use the id for each item to give its button a unique id
-4. you can grab the id for the todo that is to be deletes using JS
-5. remember, you can create HTML using the string - including ids
-6. to remove an element from an array. use the fuction slice()
-7. buttons will need event listners. those are to be created at the time you dynamically creat the buttons
-*/
